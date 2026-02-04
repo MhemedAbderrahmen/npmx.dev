@@ -1102,7 +1102,7 @@ defineOgImageComponent('Package', {
           <PackageWeeklyDownloadStats :packageName :createdIso="pkg?.time?.created ?? null" />
 
           <!-- Package scores -->
-          <PackageScoreGauges :packageName />
+          <PackageScoreBars :packageName />
 
           <!-- Playground links -->
           <PackagePlaygrounds
