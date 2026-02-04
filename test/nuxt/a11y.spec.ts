@@ -104,6 +104,7 @@ import {
   PackageManagerSelect,
   PackageMetricsBadges,
   PackagePlaygrounds,
+  PackageScoreBars,
   PackageReplacement,
   PackageSkeleton,
   PackageSkillsCard,
@@ -1005,6 +1006,16 @@ describe('component accessibility audits', () => {
           packageName: 'vue',
           version: '3.5.0',
         },
+      })
+      const results = await runAxe(component)
+      expect(results.violations).toEqual([])
+    })
+  })
+
+  describe('PackageScoreBars', () => {
+    it('should have no accessibility violations', async () => {
+      const component = await mountSuspended(PackageScoreBars, {
+        props: { packageName: 'vue' },
       })
       const results = await runAxe(component)
       expect(results.violations).toEqual([])
